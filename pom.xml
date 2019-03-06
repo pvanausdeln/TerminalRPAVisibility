@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.blumeglobal</groupId>
+	<artifactId>TerminalRPAVisibility</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>TerminalRPAVisibility</name>
+	<description>Demo project for Termianl RPA Visibility</description>
+		<!-- Spring Boot parent from repository, it enables the project as Spring 
+		Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<!-- Defining properties, versions of the frameworks that are required for 
+		application -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<cxf.version>3.2.2</cxf.version>
+		<swagger-ui.version>3.13.6</swagger-ui.version>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
+
+	<dependencies>
+		<!-- Spring boot web frameworks -->
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+	     <dependency>
+	            <groupId>org.apache.httpcomponents</groupId>
+	            <artifactId>httpcore</artifactId>
+	            <version>4.4.6</version>
+	            <exclusions>
+	                <exclusion>
+	                    <artifactId>commons-logging</artifactId>
+	                    <groupId>commons-logging</groupId>
+	                </exclusion>
+	            </exclusions>
+	        </dependency>
+        <!-- Spring Security -->
+
+        <!-- <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>            
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>            
+        </dependency> -->	        
+        
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+	        
+		<!-- Excluding default Spring boot logging, including dependencies of log4j 
+			logging -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Rez1 Common Logger functionality for INFO, ERROR and Performance Logs 
+			at class level and method level -->
+		<dependency>
+			<groupId>com.rez1.commons</groupId>
+			<artifactId>rez1-logger</artifactId>
+			<version>20180710</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+
+		<!-- Spring data JPA framework dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+		<!-- Spring boot testing framework -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Jackson API for JSON marshalling and binding -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-yaml</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+
+
+		<!-- Exclude the default Tomcat connection pool, including dbcp connection 
+			pool -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Oracle Driver -->
+
+		<dependency>
+			<groupId>oracle</groupId>
+			<artifactId>ojdbc6</artifactId>
+			<version>20110422</version>
+		</dependency>
+
+		<!-- Validation API -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>2.0.0.Final</version>
+		</dependency>
+
+
+		<!-- Common DBCP2 connection pool -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<!-- Hub DTO -->
+
+		<dependency>
+			<groupId>ias.hub</groupId>
+			<artifactId>hubcoredto</artifactId>
+			<version>20170125</version>
+		</dependency>
+
+		<!-- CXF dependencies -->
+		<!-- <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-spring-boot-starter-jaxrs</artifactId> 
+			<version>${cxf.version}</version> </dependency> <dependency> <groupId>org.apache.cxf</groupId> 
+			<artifactId>cxf-spring-boot-starter-jaxws</artifactId> <version>${cxf.version}</version> 
+			</dependency> <dependency> <groupId>org.apache.cxf</groupId> <artifactId>cxf-rt-rs-service-description-swagger</artifactId> 
+			<version>${cxf.version}</version> </dependency> -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-policy</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-tools-common</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-ws-security</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-features-metrics</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-security-cors</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<!-- Swagger frameworks for REST API documentation -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>swagger-ui</artifactId>
+			<version>${swagger-ui.version}</version>
+		</dependency>
+		<!-- Swagger 2 Dependencies for Spring REST -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<!-- Common bean util framework dependencies -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3.3</version>
+		</dependency>
+		<!-- Object Mapping framework dependencies -->
+		<dependency>
+			<groupId>ma.glasnost.orika</groupId>
+			<artifactId>orika-core</artifactId>
+			<version>1.4.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.javassist</groupId>
+					<artifactId>javassist</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.18.2-GA</version>
+		</dependency>
+
+		<!-- Excel File Read and Write Util dependencies -->
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+		
+		
+		<dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.2</version>
+        </dependency>
+		
+	</dependencies>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>releases</id>
+			<url>http://iascisrv:8081/nexus/content/repositories/releases</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<repositories>
+		<repository>
+			<id>spring-repo</id>
+			<name>Spring Repository</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<name>Releases</name>
+			<url>http://jenkins.interasset.com:8081/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
+	
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<jdbc.host>localhost</jdbc.host>
+				<jdbc.port>1521</jdbc.port>
+				<jdbc.sid>xe</jdbc.sid>
+				<jdbc.username>DMLOCAL</jdbc.username>
+				<jdbc.password>dublin09</jdbc.password>
+        	</properties>
+    	</profile>
+		<profile>
+        	<id>devintg</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+               		 <jdbc.host>10.235.69.10</jdbc.host>
+                     <jdbc.port>1522</jdbc.port>
+                     <jdbc.sid>iasdevqa</jdbc.sid>
+                     <jdbc.username>dmdevintg</jdbc.username>
+                     <jdbc.password>dublin09</jdbc.password>
+              </properties>
+    	</profile>
+		<profile>
+        	<id>edrayle</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+               		 <jdbc.host>10.235.69.10</jdbc.host>
+                     <jdbc.port>1522</jdbc.port>
+                     <jdbc.sid>iasdevqa</jdbc.sid>
+                     <jdbc.username>bmvdevintg</jdbc.username>
+                     <jdbc.password>dublin09</jdbc.password>
+              </properties>
+    	</profile>
+    	<profile>
+        	<id>testint</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+               		 <jdbc.host>10.235.69.10</jdbc.host>
+                     <jdbc.port>1522</jdbc.port>
+                     <jdbc.sid>iasdevqa</jdbc.sid>
+                     <jdbc.username>bmvtest</jdbc.username>
+                     <jdbc.password>dublin09test</jdbc.password>
+              </properties>
+    	</profile>
+    	<profile>
+        	<id>train</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+        		<jdbc.host>204.216.34.46</jdbc.host>
+        		<jdbc.port>1521</jdbc.port>
+        		<jdbc.sid>iastraining</jdbc.sid>
+        		<jdbc.username>dm</jdbc.username>
+        		<jdbc.password>BlueW00n1L</jdbc.password>
+        	</properties>
+    	</profile>
+    	<profile>
+        	<id>rez1</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+				<jdbc.host>10.235.69.10</jdbc.host>
+				<jdbc.port>1522</jdbc.port>
+				<jdbc.sid>iasdevqa</jdbc.sid>
+				<jdbc.username>REZ1DM</jdbc.username>
+				<jdbc.password>dublin09</jdbc.password>
+        	</properties>
+    	</profile>
+    	<profile>
+        	<id>si</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+                <jdbc.host>10.235.69.10</jdbc.host>
+                <jdbc.port>1522</jdbc.port>
+        		<jdbc.sid>iasdevqa</jdbc.sid>
+        		<jdbc.username>LEDMEDRAYSI</jdbc.username>
+        		<jdbc.password>dublin09</jdbc.password>
+        	</properties>
+    	</profile>
+    	<profile>
+        	<id>qa</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+               		 <jdbc.host>10.235.69.10</jdbc.host>
+                     <jdbc.port>1522</jdbc.port>
+                     <jdbc.sid>iasdevqa</jdbc.sid>
+                     <jdbc.username>DMQA</jdbc.username>
+                     <jdbc.password>dublin09</jdbc.password>
+              </properties>
+    	</profile>
+    	<profile>
+        	<id>demo</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+               		 <jdbc.host>10.235.69.10</jdbc.host>
+                     <jdbc.port>1522</jdbc.port>
+                     <jdbc.sid>iasdevqa</jdbc.sid>
+                     <jdbc.username>DMDEMO</jdbc.username>
+                     <jdbc.password>dublin09</jdbc.password>
+              </properties>
+    	</profile>
+    	<profile>
+        	<id>scprod</id>
+        	<activation>
+            	<activeByDefault>false</activeByDefault>
+        	</activation>
+        	<properties>
+        		<jdbc.host>iaspd01-02-scan.interasset.com</jdbc.host>
+        		<jdbc.port>1521</jdbc.port>
+        		<jdbc.sid>iasprddb1</jdbc.sid>
+        		<jdbc.username>dm</jdbc.username>
+        		<jdbc.password>M155ss0ur132</jdbc.password>
+                <test.env>dev</test.env>
+        	</properties>
+    	</profile>
+	</profiles>	
+	<build>
+		<plugins>
+			<!-- <plugin> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-maven-plugin</artifactId> 
+				</plugin> -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.0.3.RELEASE</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.dbdeploy</groupId>
+				<artifactId>maven-dbdeploy-plugin</artifactId>
+				<version>3.0M3</version>
+				<configuration>
+					<driver>oracle.jdbc.driver.OracleDriver</driver>
+					<url>jdbc:oracle:thin:@${jdbc.host}:${jdbc.port}:${jdbc.sid}</url>
+					<userid>${jdbc.username}</userid>
+					<password>${jdbc.password}</password>
+					<dbms>${jdbc.sid}</dbms>					<delimiter>;</delimiter>
+					<changeLogTableName>scv_changelog</changeLogTableName>
+					<scriptdirectory>${basedir}/database/4.2</scriptdirectory>
+					<outputfile>output.sql</outputfile>
+					<undoOutputfile>undo.sql</undoOutputfile>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>oracle</groupId>
+						<artifactId>ojdbc6</artifactId>
+						<version>20110422</version>
+					</dependency>
+					<dependency>
+						<groupId>commons-lang</groupId>
+						<artifactId>commons-lang</artifactId>
+						<version>2.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>	
+		</plugins>
+	</build>
+</project>

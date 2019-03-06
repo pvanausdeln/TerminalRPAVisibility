@@ -1,0 +1,61 @@
+#application properties
+
+# HTTP (Tomcat) port
+server:
+  port: 8502
+  ssl:
+    key-store-type: PKCS12
+    key-store: STAR_ias.p12
+    key-store-password: password    
+    key-alias: 1
+   
+    
+
+   
+#logging
+logging:
+   config: classpath:log4j2-local.yaml
+   level: 
+     root: INFO
+     org.springframework.data: INFO
+     org.springframework.security: INFO
+
+#cxf
+cxf:
+  path: /
+  servlet.init: 
+    service-list-path: /info
+  jaxrs: 
+    component-scan: true
+    classes-scan-packages: org.apache.cxf.jaxrs.swagger,org.apache.cxf.metrics
+    
+ 
+spring:
+  datasource:
+      url: jdbc:oracle:thin:@localhost:1521:xe
+      username: dmlocal
+      password: dublin09
+      driverClass:  oracle.jdbc.driver.OracleDriver
+# dbcp2 settings 
+      dbcp2:
+        initial-size: 5
+        max-total: 25
+        pool-prepared-statements: true
+
+  jpa:
+    properties:
+      hibernate:
+        show-sql:true
+        use-sql-comments:true
+        format-sql:true
+
+client:
+  hub:
+    address: http://10.235.71.22:9301/Hub6/hub-services/DispatchManagerFacadeService
+  le:
+    address: https://localhost:8503/v1/railbilling/
+    railBillingUpdateAddress: https://localhost:8503/v1/railbilling/updateStatus/
+    
+  wo:
+    workOrderURL: https://localhost:8502
+    authenticationapiKey: clP8hFuKWZBteBGY1rZRBS1y86qTezY6

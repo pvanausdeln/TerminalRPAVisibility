@@ -1,0 +1,10 @@
+[INFO ] 2019-03-05 18:10:02.646 [main] TomcatWebServer - Tomcat started on port(s): 8502 (https) with context path ''
+[DEBUG] 2019-03-05 18:10:02.663 [main] SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
+[DEBUG] 2019-03-05 18:10:05.764 [Thread-5] AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8741cb, started on Tue Mar 05 18:09:55 PST 2019
+[DEBUG] 2019-03-05 18:10:05.764 [Thread-5] DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+[DEBUG] 2019-03-05 18:10:05.771 [Thread-5] DefaultLifecycleProcessor - Bean 'documentationPluginsBootstrapper' completed its stop procedure
+[INFO ] 2019-03-05 18:10:05.771 [Thread-5] ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
+[DEBUG] 2019-03-05 18:10:05.773 [Thread-5] AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+[DEBUG] 2019-03-05 18:10:05.773 [Thread-5] AnnotationMBeanExporter - Unregistering JMX-exposed beans
+[INFO ] 2019-03-05 18:10:05.773 [Thread-5] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2019-03-05 18:10:05.773 [Thread-5] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
