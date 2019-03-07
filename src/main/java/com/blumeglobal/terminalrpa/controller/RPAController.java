@@ -36,17 +36,17 @@ public class RPAController {
 	
     @RequestMapping(value = "/evergreen", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> evergreen() throws Exception {
-    	   //myService.terminalRPAEverportLA();
-    	   return new ResponseEntity<>("Completed!", HttpStatus.OK);
+    	myService.terminalRPAEverportLA();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
     @GetMapping(value = "/seattle", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> seattle() throws Exception {
-    	//myService.terminalRPASeattle46();
+    	myService.terminalRPASeattle46();
     	RPAResponse responseObj = new RPAResponse();
     	responseObj.setMessage("Complete");
-//    	String s = "{\"x\" : \"Complete\"}";
-//    	System.out.println(s);
  	   return new ResponseEntity<>(responseObj, HttpStatus.OK);
 
     }
