@@ -1,0 +1,95 @@
+.header{
+    display: flex;
+    height: 60px;
+    background-color: #18253D;
+    font-family: "Open Sans", Arial, sans-serif;
+    color:white;
+    font-size:20px;
+}
+    
+    .path-form{
+        padding: 10px;
+        flex-basis: 33%;
+            mat-form-field{
+                font-size: 14px;
+                padding:30px;
+                margin: 30px;
+                width:300px;
+        }
+    }
+        .path-grid-container{
+            padding: 10px 10px;
+            display: flex;
+            
+        }    
+
+
+.add-location-form-container{
+    font: "OpenSans, Arial";
+    padding: 20px;
+
+    .section-container{
+        margin: 20px 0;
+        
+        .section-header{
+            display: flex;
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            letter-spacing: normal;
+            color: #4a4a4a;
+       
+        }
+
+        .form-content{
+            display: flex;
+            flex-direction: row;
+            font-size: 14px;
+
+            .form-field{
+                width: 33%;
+                display: flex;
+                // border: 1px solid green;
+                justify-content: flex-start;
+
+                
+
+                label{
+                    font-size: 11px;
+                    font-weight: 600;
+                    font-style: normal;
+                    font-stretch: normal;
+                    font-family: OpenSans;
+                    text-align: right;
+                    color: #3a546b; 
+                    line-height: 2.39;
+                    padding-right:5px;
+                     
+                }
+                
+            }
+            
+        }
+
+        .btn {
+            background-color: #3A546B;
+            border: none;
+            color: white;
+            padding: 20px 40px 20px 40px;
+            text-align: center;
+            font-size: 14px;
+            font-family: OpenSans;
+            margin: 20px 20px 20px 0;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+          }
+        
+        .btn:hover {opacity: 1}
+    }
+}

@@ -1,0 +1,144 @@
+
+//Material Theme Colors
+$mat-thm-900: #0b1325;
+$mat-thm-700: #18253d;
+$mat-thm-500: #21314d;
+$mat-thm-300: #646f82;
+$mat-thm-bg: #F8F8F8;
+
+//Material Theme Accent Colors
+$mat-thm-acnt-900: #1B5E20;
+$mat-thm-acnt-700: #388E3C;
+$mat-thm-acnt-300: #81C784;
+
+//REZ1 theme base styles 
+
+$thm-font: 'Open Sans', Arial, sans-serif; 
+$thm-font-color: #4a4b4d;
+$thm-content-font-size: 1em;
+$thm-content-font-color: #828282;
+$thm-caption-font-size: .7em;
+$thm-header-font-color: #202124;
+$thm-subheader-font-color: #727A8C;
+$thm-header-hfont-color: $mat-thm-900;
+$thm-gencontent-font-color: #828282; //#5f6368;
+
+
+// Top Navigation
+$topnav-font: 'Open Sans', Arial, sans-serif; ; 
+$topnav-font-size: .8em; //16px;
+$topnav-font-color: #FFFFFF;
+$topnav-font-hover-color: $mat-thm-300;
+$topnav-font-active-color: #F2994A;
+
+
+//Cover Floating Sidebar Navigation
+$sb-menu-bg: #1976D2;
+$sb-menu-font: Helvetica, sans-serif;
+$sb-menu-font-color: #ffffff;
+$sb-menu-font-color-hover: $mat-thm-300;
+$sb-menu-font-size: .8em; //16px;
+$sb-submenu-font-size: .9em;
+
+//Content Sidebar Navigation
+$csbnav-bg: #efefef;
+$csbnav-font: 'Open Sans', Arial, sans-serif; 
+$csbnav-font-size: .95em;
+$csbnav-font-color: $mat-thm-900;
+$csbnav-hover-color: $thm-header-font-color;
+$csbnav-hover-bg: #d6e6f3;
+$csbnav-selected-color: #ffffff; //$thm-header-font-color;
+$csbnav-selected-bg: #d6e6f3;
+
+
+
+//List
+$list-bg: #ffffff;
+$list-header-font-size: 1.1em;
+$list-header-font-color: $thm-header-font-color;
+$list-subheader-font-size: .8em;
+$list-subheader-font-color: $thm-subheader-font-color;
+$list-content-font-size: $thm-content-font-size;
+$list-content-font-color: $thm-content-font-color;
+
+
+
+//Cards
+$card-header-font-size: .9em;
+$card-header-font-color: $topnav-font-active-color;
+$card-subheader-font-size: .8em;
+$card-subheader-font-color: $thm-subheader-font-color;
+
+$card-denseheader-font-size: .8em;
+$card-content-font-size: .8em;
+
+$card-content-font-color: $thm-content-font-color;
+$card-border-color: $thm-header-font-color;
+$card-shaded-background: #f3f3f3;
+$card-clear-background: #ffffff;
+
+
+//Deprecated
+$card-header-primary: $thm-header-font-color;// #2D9CDB;
+$card-subheader-primary: $thm-header-font-color;// #828282;
+$card-highlight-primary: $thm-header-font-color; // #F2994A;
+$card-list-content-primary: $thm-gencontent-font-color; // #727A8C;
+//*** end 
+
+
+$theme-success-color:#00AA8D;
+$theme-default-font-size:1em;
+$theme-default-font-family: 'Open Sans', Arial, sans-serif; 
+$theme-box-shadow:0 3px 6px rgba(0, 0, 0, 0.16),0 3px 6px rgba(0, 0, 0, 0.23);
+$theme-default-color:#000;
+$theme-row-highlight:#efefef;
+$theme-row-highlight-border:#7fb0d8; 
+
+
+//Widget-Cards
+$widget-header-font-size: 3em;
+$widget-footer-font-size: .9em;
+
+//footer
+$footer-font-color: #c7c7c7;
+$footer-font-size: 0.85em;
+
+
+//order-details-page
+$order-detail-font-color:#3A546B;
+$hundred-percent:100%;
+$open-sans-font:"open sans";
+$white-color:#FFFFFF;
+$content-header-color:#4a4b4d;
+$content-table-header-color:#D8E1E8;
+
+//Shipment
+$shipment-link-color: #00a4d3;
+$shipment-summary-background-color: #3A546B;
+$shipment-summary-status-background: #cccccc;
+$shipment-summary-bgcolor: #ebf0f4;
+%shipment-common-grid {
+    background: hsl(0, 0%, 98%);
+    width: 96vw;
+    height: $hundred-percent;
+}
+%modal-common-style{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2 !important; /* Sit on top */
+    padding-top: 100px; /* Location of the box */    
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+%modal-header-style{
+    color:  #3a546b;
+    padding:10px;
+    border-bottom: 1px solid #dddddd;
+    display: flex;
+}
+

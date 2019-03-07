@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+@import '../assets/variables.scss';
+$rez-theme-primary: mat-palette($mat-indigo, 700, 300, 900);
+$rez-theme-accent: mat-palette($mat-light-blue);
+$rez-theme-warn: mat-palette($mat-deep-orange, A200);
+
+
+$rez-dark-theme: mat-light-theme(
+    $rez-theme-primary,
+    $rez-theme-accent,
+    $rez-theme-warn
+);
+
+
+@include mat-core();
+.rez-dark-theme {
+    @include angular-material-theme($rez-dark-theme);
+  }

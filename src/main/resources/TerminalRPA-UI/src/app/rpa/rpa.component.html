@@ -1,0 +1,29 @@
+<mat-toolbar class="header">
+  <span class="logo">RPA Admin</span>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+
+<div class="add-location-form-container">
+        <div class="section-container">
+        <h4 class="section-header">Select a Terminal</h4> <hr><br>
+        <form [formGroup]="sform" class="path-form" (ngSubmit)="onSubmit()">        
+        <div>
+                  <mat-form-field appearance="outline" width="300px">
+                    <mat-label>Terminal</mat-label>
+                    <mat-select name="terminal" formControlName="terminal">
+                      <mat-option value="LA">LA - Evergreen</mat-option>
+                      <mat-option value="SE">Seattle - Terminal 46</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <!-- <mat-form-field appearance="outline">
+                    <mat-select name="locationType" formControlName="locationType">
+                      <mat-option value="DC">DC</mat-option>
+                      <mat-option value="MFG PLANT">MFG PLANT</mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+                  <button type="submit" class="btn">Run</button>
+                </div>
+      </form>
+      <div *ngIf="results">{{results}}</div>
+        </div>
+      </div>
