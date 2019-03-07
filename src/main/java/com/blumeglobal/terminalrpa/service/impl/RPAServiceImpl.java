@@ -30,7 +30,7 @@ public class RPAServiceImpl{
 	@Autowired
 	RPARepository rpaRepository;
 	
-	public void terminalRPASeattle46() throws IOException {
+	public void terminalRPASeattle46() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.T46Search();
 		if(excel == null) {
@@ -43,7 +43,7 @@ public class RPAServiceImpl{
 		}
 	}
 	
-	public void terminalRPAEverportLA() throws IOException {
+	public void terminalRPAEverportLA() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.EverportLASearch();
 		if(excel == null) {
@@ -56,7 +56,7 @@ public class RPAServiceImpl{
 		}
 	}
 	
-	public void createExcel(List<IRPAQuery> excel, String dir) throws IOException {
+	public void createExcel(List<IRPAQuery> excel, String dir) throws Exception {
 		XSSFWorkbook workbook = new XSSFWorkbook();
 	    XSSFSheet spreadsheet = workbook.createSheet("Sheet1");
 	    Row header = spreadsheet.createRow(0);

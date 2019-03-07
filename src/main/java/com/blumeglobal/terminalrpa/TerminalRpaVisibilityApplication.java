@@ -36,7 +36,7 @@ public class TerminalRpaVisibilityApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(TerminalRpaVisibilityApplication.class, args);
-		System.exit(0);
+		//System.exit(0);
 	}
 
 }
