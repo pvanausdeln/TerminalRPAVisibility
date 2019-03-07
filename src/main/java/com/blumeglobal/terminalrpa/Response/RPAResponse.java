@@ -1,4 +1,4 @@
-package com.blumeglobal.terminalrpa.Response;
+package com.blumeglobal.terminalrpa.response;
 
 public class RPAResponse {
 	private String message;

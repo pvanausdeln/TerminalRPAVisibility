@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.blumeglobal.terminalrpa.Response.RPAResponse;
+import com.blumeglobal.terminalrpa.response.RPAResponse;
 import com.blumeglobal.terminalrpa.service.IRPAService;
 import com.blumeglobal.terminalrpa.service.impl.RPAServiceImpl;
 import com.rez1.common.annotations.REZ1Logger;
