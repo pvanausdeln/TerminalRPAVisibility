@@ -6,8 +6,8 @@
 <div class="add-location-form-container">
         <div class="section-container">
         <h4 class="section-header">Select a Terminal</h4> <hr><br>
-        <form [formGroup]="sform" class="path-form" (ngSubmit)="onSubmit()">        
-        <div>
+        <!-- <form [formGroup]="sform" class="path-form" (ngSubmit)="onSubmit()">        
+                <div>
                   <mat-form-field appearance="outline" width="300px">
                     <mat-label>Terminal</mat-label>
                     <mat-select name="terminal" formControlName="terminal">
@@ -15,15 +15,28 @@
                       <mat-option value="SE">Seattle - Terminal 46</mat-option>
                     </mat-select>
                   </mat-form-field>
-                  <!-- <mat-form-field appearance="outline">
-                    <mat-select name="locationType" formControlName="locationType">
-                      <mat-option value="DC">DC</mat-option>
-                      <mat-option value="MFG PLANT">MFG PLANT</mat-option>
-                    </mat-select>
-                  </mat-form-field> -->
                   <button type="submit" class="btn">Run</button>
                 </div>
       </form>
-      <div *ngIf="results">{{results}}</div>
+      <div *ngIf="results">{{results}}</div> -->
         </div>
       </div>
+      <div class="LocationMaster-list-grid">
+        <div class="path-grid-container">
+<kendo-grid id="locationsGrid" [filter]="gridState.filter" filterable="menu" [skip]="gridState.skip" [sort]="sort"
+  [sortable]="true" [reorderable]="true" [resizable]="true" [scrollable]="'virtual'" [style.height.vh]='70'
+  [columnMenu]="true" [data]='gridData'>
+  <kendo-grid-column field="port" title="Port" [headerClass]="'gridheader'" [minResizableWidth]="100">
+  </kendo-grid-column>
+  <kendo-grid-column field="terminal" title="Terminal" [headerClass]="'gridheader'" [minResizableWidth]="100">
+  </kendo-grid-column>
+  <kendo-grid-command-column title="Run" [headerClass]="'gridheader'" [width]="200">
+    <ng-template kendoGridCellTemplate let-isNew="isNew" let-dataItem>
+        <button class="btn" (click)="onSubmit(dataItem)">Run</button>
+    </ng-template>
+</kendo-grid-command-column>
+<kendo-grid-column field="results" title="Results" [headerClass]="'gridheader'" [minResizableWidth]="100">  
+</kendo-grid-column>
+</kendo-grid>
+</div>
+</div>

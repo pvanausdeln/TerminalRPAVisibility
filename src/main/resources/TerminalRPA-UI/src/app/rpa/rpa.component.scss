@@ -6,6 +6,28 @@
     color:white;
     font-size:20px;
 }
+
+.LocationMaster-list-grid{
+    background: hsl(0, 0%, 98%);
+    // width: 96vw;
+    height: 100%;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 14px; 
+   
+}
+.add-location-form-container{
+    .mat-form-field{
+        margin-right: 20px;
+    }
+}
+::ng-deep .gridheader{
+    background-color: #ebf0f4;
+    color: #3a546c;
+    height: 2em; 
+    font-size: 14px; 
+    font-weight: 600;
+
+}
     
     .path-form{
         padding: 10px;
@@ -26,10 +48,10 @@
 
 .add-location-form-container{
     font: "OpenSans, Arial";
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
 
     .section-container{
-        margin: 20px 0;
+        margin: 20px 0px 0px 0px;
         
         .section-header{
             display: flex;
