@@ -17,6 +17,6 @@ public class RPA implements CommandLineRunner {
 	public void run(String[] args) throws Exception {
 		System.out.println("------------------------");
 		//myService.terminalRPASeattle46();
-		myService.terminalRPAEverportLA();
+		//myService.terminalRPAEverportLA();
 	 	}
 }

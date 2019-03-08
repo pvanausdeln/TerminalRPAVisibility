@@ -42,8 +42,26 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
-    @GetMapping(value = "/seattle", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> seattle() throws Exception {
+    @GetMapping(value = "/seattle18", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> seattle18() throws Exception {
+    	myService.terminalRPASeattle18();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+ 	   return new ResponseEntity<>(responseObj, HttpStatus.OK);
+
+    }
+    
+    @GetMapping(value = "/seattle30", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> seattle30() throws Exception {
+    	myService.terminalRPASeattle30();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+ 	   return new ResponseEntity<>(responseObj, HttpStatus.OK);
+
+    }
+    
+    @GetMapping(value = "/seattle46", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> seattle46() throws Exception {
     	myService.terminalRPASeattle46();
     	RPAResponse responseObj = new RPAResponse();
     	responseObj.setMessage("Complete");
