@@ -44,7 +44,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and w.vessel IS NOT NULL \n" + 
 			"AND w.voyage IS NOT NULL \n" + 
 			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT NULL" +
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery=true)
 	List<IRPAQuery> SeattleT18Search();
 	
@@ -69,7 +69,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and w.vessel IS NOT NULL \n" + 
 			"AND w.voyage IS NOT NULL \n" + 
 			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT NULL" +
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery=true)
 	List<IRPAQuery> SeattleT30Search();
 	
@@ -94,7 +94,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and w.vessel IS NOT NULL \n" + 
 			"AND w.voyage IS NOT NULL \n" + 
 			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT NULL" +
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery=true)
 	List<IRPAQuery> SeattleT46Search();
 	
@@ -120,6 +120,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND w.voyage IS NOT NULL \n" + 
 			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" +
 			"AND w.ORIGINATORNAME LIKE '%Los Angeles%' \n" +
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery=true)
 	List<IRPAQuery> EverportLASearch();
 	
