@@ -38,8 +38,10 @@ export class RpaComponent implements OnInit {
 
   setGridData(){
     this.gridData = [
-      {'id': 0, 'port': 'Los Angeles', 'terminal': 'Evergreen', 'results': '', 'terminalId': 'LA' },
-      {'id': 1, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'SE' }
+      {'id': 0, 'port': 'Los Angeles', 'terminal': 'Evergreen', 'results': '', 'terminalId': 'evergreen' },
+      {'id': 1, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
+      {'id': 2, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
+      {'id': 3, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
     ];
   }
 
@@ -57,13 +59,8 @@ export class RpaComponent implements OnInit {
 
 
   runRPA(terminalId: any): Observable<any[]> {
-    let url = "https://localhost:8502/";
+    let url = "https://localhost:8502/" + terminalId;
     console.log(url);
-    if (terminalId == "SE"){
-       url = "https://localhost:8502/seattle";
-    } else {
-       url = "https://localhost:8502/evergreen";
-    }
     return this.http.get<any[]>(url);
   }
 
