@@ -82,6 +82,14 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPAEverportOAK() throws Exception {
+		List<IRPAQuery> excel = null;
+	}
+	
+	public void terminalRPAEverportTAC() throws Exception {
+		List<IRPAQuery> excel = null;
+	}
+	
 	public void createExcel(List<IRPAQuery> excel, String dir) throws Exception {
 		XSSFWorkbook workbook = new XSSFWorkbook();
 	    XSSFSheet spreadsheet = workbook.createSheet("Sheet1");
