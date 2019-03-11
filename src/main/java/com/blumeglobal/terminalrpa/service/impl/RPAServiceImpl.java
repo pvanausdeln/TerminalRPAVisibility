@@ -77,17 +77,35 @@ public class RPAServiceImpl{
 			System.exit(1);
 		}
 		else {
-			createExcel(excel, "EvergreenPort");
+			createExcel(excel, "EvergreenPortLA");
 			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortLA\\Main.xaml\"");
 		}
 	}
 	
 	public void terminalRPAEverportOAK() throws Exception {
 		List<IRPAQuery> excel = null;
+		excel = rpaRepository.EverportOAKSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "EvergreenPortOAK");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortOAK\\Main.xaml\"");
+		}
 	}
 	
 	public void terminalRPAEverportTAC() throws Exception {
 		List<IRPAQuery> excel = null;
+		excel = rpaRepository.EverportTACSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "EvergreenPortTAC");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortTAC\\Main.xaml\"");
+		}
 	}
 	
 	public void createExcel(List<IRPAQuery> excel, String dir) throws Exception {
