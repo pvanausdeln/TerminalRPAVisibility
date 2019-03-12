@@ -26,7 +26,7 @@ export class RpaComponent implements OnInit {
 
   ngOnInit() {
     this.sform = this.frmBld.group({
-      'terminal': ""
+      'terminal': ''
     });
     this.gridState = {
       skip: 0,
@@ -38,30 +38,30 @@ export class RpaComponent implements OnInit {
 
   setGridData(){
     this.gridData = [
-      {'id': 0, 'port': 'Los Angeles', 'terminal': 'Evergreen', 'results': '', 'terminalId': 'evergreen' },
-      {'id': 1, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
-      {'id': 2, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
-      {'id': 3, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' },
-      {'id': 4, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
-      {'id': 5, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' }
+      {'id': 0, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreen' },
+      {'id': 1, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
+      {'id': 2, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
+      {'id': 3, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
+      {'id': 4, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
+      {'id': 5, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
     ];
   }
 
   onSubmit(terminalData: any){
-    console.log("here");
-    if (terminalData.terminalId != ""){
+    console.log('here');
+    if (terminalData.terminalId !== ''){
         this.runRPA(terminalData.terminalId).subscribe(data => {
             this.gridData[terminalData.id].results = JSON.stringify(data);
             console.log(this.gridData[terminalData.id].message);
         });
     } else {
-      alert("please select a terminal");
+      alert('please select a terminal');
     }
   }
 
 
   runRPA(terminalId: any): Observable<any[]> {
-    let url = "https://localhost:8502/" + terminalId;
+    const url = 'https://localhost:8502/' + terminalId;
     console.log(url);
     return this.http.get<any[]>(url);
   }
