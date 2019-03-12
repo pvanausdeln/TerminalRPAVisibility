@@ -138,6 +138,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"where ew.workorderid = w.workorderid \n" + 
 			"and s.workorderid = w.workorderid \n" + 
 			"AND ew.EQUIPMENTNUMBER IS NOT null \n" + 
+			"-- and w.statusid in (2,3) \n" +
 			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
 			"and s.stopnumber = 1 \n" + 
 			"and s.name like '%BEN E%' \n" + 
@@ -150,17 +151,21 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
 			"dm.stop s \n" + 
 			"where ew.workorderid = w.workorderid \n" + 
 			"and s.workorderid = w.workorderid \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
 			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
 			"and s.stopnumber = 1 \n" + 
-			"and s.name like '%TAC%' \n" + 
+			"and s.name like '%PIERCE%' \n" + 
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
 	List<IRPAQuery> EverportTACSearch();
 	
