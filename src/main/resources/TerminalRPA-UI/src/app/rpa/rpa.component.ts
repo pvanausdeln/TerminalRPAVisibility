@@ -38,18 +38,19 @@ export class RpaComponent implements OnInit {
 
   setGridData(){
     this.gridData = [
-      {'id': 0, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreen' },
-      {'id': 1, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
-      {'id': 2, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
-      {'id': 3, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
-      {'id': 4, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
-      {'id': 5, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
+      {'id': 0, 'port': 'Los Angeles', 'terminal': 'APM Los Angeles', 'results': '', 'terminalId': 'apmLA'},
+      {'id': 1, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreenLA' },
+      {'id': 2, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
+      {'id': 3, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
+      {'id': 4, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
+      {'id': 5, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
+      {'id': 6, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
     ];
   }
 
   onSubmit(terminalData: any){
     console.log('here');
-    if (terminalData.terminalId !== ''){
+    if (terminalData.terminalId !== '') {
         this.runRPA(terminalData.terminalId).subscribe(data => {
             this.gridData[terminalData.id].results = JSON.stringify(data);
             console.log(this.gridData[terminalData.id].message);

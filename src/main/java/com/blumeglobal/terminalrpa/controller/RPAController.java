@@ -34,7 +34,15 @@ public class RPAController {
 		
 	}
 	
-    @RequestMapping(value = "/evergreen", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/ampLA", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> AMPLA() throws Exception {
+    	myService.terminalRPA_APMLA();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+	
+    @RequestMapping(value = "/evergreenLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> evergreen() throws Exception {
     	myService.terminalRPAEverportLA();
        	RPAResponse responseObj = new RPAResponse();

@@ -24,6 +24,103 @@ import com.rez1.common.annotations.REZ1PerformanceLogger;
 public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecificationExecutor<RPAEvent>{
 	
 	@Query(value = "select \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name, \n" + 
+			"w.originatorname \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"and s.name like '%APM%' \n" + 
+			"AND w.originatorname LIKE '%Los Angeles%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+	List<IRPAQuery> AMPLASearch();
+	
+	@Query(value = "select \n" + 
+			"ew.EQUIPMENTNUMBER , \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from  \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"and s.state = 'CA' \n" + 
+			"and s.name like '%EVERPORT%' \n" + 
+			"and w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT NULL \n" + 
+			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" +
+			"AND w.ORIGINATORNAME LIKE '%Los Angeles%' \n" +
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
+			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+	List<IRPAQuery> EverportLASearch();
+	
+	@Query(value = "select \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT null \n" + 
+			"-- and w.statusid in (2,3) \n" +
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"and s.name like '%BEN E%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+	List<IRPAQuery> EverportOAKSearch();
+	
+	@Query(value = "select \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"and s.name like '%PIERCE%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+	List<IRPAQuery> EverportTACSearch();
+	
+	@Query(value = "select \n" + 
 			"ew.EQUIPMENTNUMBER , \n" + 
 			"w.VESSEL, \n" + 
 			"w.VOYAGE, \n" + 
@@ -97,76 +194,5 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
 	List<IRPAQuery> SeattleT46Search();
-	
-	@Query(value = "select \n" + 
-			"ew.EQUIPMENTNUMBER , \n" + 
-			"w.VESSEL, \n" + 
-			"w.VOYAGE, \n" + 
-			"w.workordernumber, \n" + 
-			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
-			"from  \n" + 
-			"dm.workorder w, \n" + 
-			"dm.equipmentonworkorder ew, \n" + 
-			"dm.stop s \n" + 
-			"where ew.workorderid = w.workorderid \n" + 
-			"and s.workorderid = w.workorderid \n" + 
-			"and w.statusid in (2,3) \n" + 
-			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
-			"and s.stopnumber = 1 \n" + 
-			"and s.state = 'CA' \n" + 
-			"and s.name like '%EVERPORT%' \n" + 
-			"and w.vessel IS NOT NULL \n" + 
-			"AND w.voyage IS NOT NULL \n" + 
-			"AND w.SHIPMENTREFERENCENUMBER IS NOT NULL \n" +
-			"AND w.ORIGINATORNAME LIKE '%Los Angeles%' \n" +
-			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" +
-			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
-	List<IRPAQuery> EverportLASearch();
-	
-	@Query(value = "select \n" + 
-			"ew.EQUIPMENTNUMBER, \n" + 
-			"w.VESSEL, \n" + 
-			"w.VOYAGE, \n" + 
-			"w.workordernumber, \n" + 
-			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
-			"from \n" + 
-			"dm.workorder w, \n" + 
-			"dm.equipmentonworkorder ew, \n" + 
-			"dm.stop s \n" + 
-			"where ew.workorderid = w.workorderid \n" + 
-			"and s.workorderid = w.workorderid \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT null \n" + 
-			"-- and w.statusid in (2,3) \n" +
-			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
-			"and s.stopnumber = 1 \n" + 
-			"and s.name like '%BEN E%' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
-	List<IRPAQuery> EverportOAKSearch();
-	
-	@Query(value = "select \n" + 
-			"ew.EQUIPMENTNUMBER, \n" + 
-			"w.VESSEL, \n" + 
-			"w.VOYAGE, \n" + 
-			"w.workordernumber, \n" + 
-			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER, \n" + 
-			"s.name \n" + 
-			"from \n" + 
-			"dm.workorder w, \n" + 
-			"dm.equipmentonworkorder ew, \n" + 
-			"dm.stop s \n" + 
-			"where ew.workorderid = w.workorderid \n" + 
-			"and s.workorderid = w.workorderid \n" + 
-			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
-			"AND w.vessel IS NOT NULL \n" + 
-			"AND w.voyage IS NOT null \n" + 
-			"and w.statusid in (2,3) \n" + 
-			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
-			"and s.stopnumber = 1 \n" + 
-			"and s.name like '%PIERCE%' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
-	List<IRPAQuery> EverportTACSearch();
 	
 }
