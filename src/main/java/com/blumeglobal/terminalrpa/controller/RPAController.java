@@ -34,7 +34,7 @@ public class RPAController {
 		
 	}
 	
-	@RequestMapping(value = "/ampLA", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/apmLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> AMPLA() throws Exception {
     	myService.terminalRPA_APMLA();
        	RPAResponse responseObj = new RPAResponse();

@@ -32,7 +32,7 @@ public class RPAServiceImpl{
 	
 	public void terminalRPA_APMLA() throws Exception {
 		List<IRPAQuery> excel = null;
-		excel = rpaRepository.EverportLASearch();
+		excel = rpaRepository.APMLASearch();
 		if(excel == null) {
 			System.out.println("Query failed for some reason");
 			System.exit(1);
