@@ -41,11 +41,12 @@ export class RpaComponent implements OnInit {
       {'id': 0, 'port': 'Los Angeles', 'terminal': 'APM Los Angeles', 'results': '', 'terminalId': 'apmLA'},
       {'id': 1, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreenLA' },
       {'id': 2, 'port': 'Los Angeles', 'terminal': 'TraPac Los Angeles', 'results': '', 'terminalId': 'trapacLA' },
-      {'id': 3, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
-      {'id': 4, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
-      {'id': 5, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
-      {'id': 6, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
-      {'id': 7, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
+      {'id': 3, 'port': 'Los Angeles', 'terminal': 'Yang Ming Los Angeles', 'results': '', 'terminalId': 'ymLA' },
+      {'id': 4, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
+      {'id': 5, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
+      {'id': 6, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
+      {'id': 7, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
+      {'id': 8, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' }
     ];
   }
 
