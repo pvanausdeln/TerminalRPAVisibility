@@ -93,7 +93,7 @@ public class RPAController {
 
     }
     
-    @RequestMapping(value = "/tpLA", produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/trapacLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> tpLA() throws Exception {
     	myService.terminalRPA_TPLA();
     	RPAResponse responseObj = new RPAResponse();
