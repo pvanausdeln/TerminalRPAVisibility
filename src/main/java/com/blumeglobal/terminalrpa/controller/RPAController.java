@@ -66,6 +66,14 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/pacificLB", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> pacificLB() throws Exception {
+    	myService.terminalRPAPacificLB();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
     @GetMapping(value = "/seattle18", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> seattle18() throws Exception {
     	myService.terminalRPASeattle18();

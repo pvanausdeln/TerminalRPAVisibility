@@ -82,6 +82,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPAPacificLB() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.PacificLBSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "PacificLB");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\PacificLB\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPASeattle18() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.SeattleT18Search();
