@@ -109,13 +109,13 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
-    @RequestMapping(value = "/ymLA", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> ymLA() throws Exception {
-    	myService.terminalRPA_YMLA();
-    	RPAResponse responseObj = new RPAResponse();
-    	responseObj.setMessage("Complete");
-    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/ymLA", produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<?> ymLA() throws Exception {
+//    	myService.terminalRPA_YMLA();
+//    	RPAResponse responseObj = new RPAResponse();
+//    	responseObj.setMessage("Complete");
+//    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+//    }
     
     
 }
