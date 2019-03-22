@@ -244,6 +244,34 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
 	List<IRPAQuery> TPLASearch();
 	
+	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"AND s.name LIKE '%TRAPAC OAKLAND%' \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+	List<IRPAQuery> TPOAKSearch();
+	
 //	@Query(value = "SELECT  \n" + 
 //			"ew.EQUIPMENTNUMBER, \n" + 
 //			"w.VESSEL, \n" + 

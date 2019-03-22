@@ -147,6 +147,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_TPOAK() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.TPOAKSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "TPOAK");
+			//Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPOAK\\Main.xaml\"");
+		}
+	}
+	
 //	public void terminalRPA_YMLA() throws Exception {
 //		List<IRPAQuery> excel = null;
 //		excel = rpaRepository.YMLASearch();

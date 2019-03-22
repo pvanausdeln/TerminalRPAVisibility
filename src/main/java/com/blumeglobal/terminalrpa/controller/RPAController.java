@@ -109,6 +109,14 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/trapacOAK", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> tpOAK() throws Exception {
+    	myService.terminalRPA_TPOAK();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
 //    @RequestMapping(value = "/ymLA", produces = MediaType.APPLICATION_JSON_VALUE)
 //    public ResponseEntity<?> ymLA() throws Exception {
 //    	myService.terminalRPA_YMLA();
