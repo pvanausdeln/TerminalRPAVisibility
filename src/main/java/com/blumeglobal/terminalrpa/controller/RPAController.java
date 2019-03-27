@@ -34,6 +34,14 @@ public class RPAController {
 		
 	}
 	
+	@RequestMapping(value = "/updateLists", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> updateLists() throws Exception {
+    	myService.updateAll();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+	
 	@RequestMapping(value = "/apmLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> AMPLA() throws Exception {
     	myService.terminalRPA_APMLA();
@@ -61,6 +69,14 @@ public class RPAController {
     @RequestMapping(value = "/evergreenTAC", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> evergreenTAC() throws Exception {
     	myService.terminalRPAEverportTAC();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/huskyTAC", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> huskyTAC() throws Exception {
+    	myService.terminalRPAHuskyTAC();
        	RPAResponse responseObj = new RPAResponse();
        	responseObj.setMessage("Complete");
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
@@ -104,6 +120,14 @@ public class RPAController {
     @RequestMapping(value = "/trapacLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> tpLA() throws Exception {
     	myService.terminalRPA_TPLA();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/trapacOAK", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> tpOAK() throws Exception {
+    	myService.terminalRPA_TPOAK();
     	RPAResponse responseObj = new RPAResponse();
     	responseObj.setMessage("Complete");
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);

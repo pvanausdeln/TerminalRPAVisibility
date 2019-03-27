@@ -82,6 +82,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPAHuskyTAC() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.HuskyTACSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "HuskyTAC");
+			//Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\HuskyTAC\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPAPacificLB() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.PacificLBSearch();
@@ -145,6 +158,33 @@ public class RPAServiceImpl{
 			createExcel(excel, "TPLA");
 			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPLA\\Main.xaml\"");
 		}
+	}
+	
+	public void terminalRPA_TPOAK() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.TPOAKSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "TPOAK");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPOAK\\Main.xaml\"");
+		}
+	}
+	
+	public void updateAll() throws Exception {
+		createExcel(rpaRepository.APMLASearch(), "APMLA");
+		createExcel(rpaRepository.EverportLASearch(), "EvergreenPortLA");
+		createExcel(rpaRepository.EverportOAKSearch(), "EvergreenPortOAK");
+		createExcel(rpaRepository.EverportTACSearch(), "EvergreenPortTAC");
+		createExcel(rpaRepository.HuskyTACSearch(), "HuskyTAC");
+		createExcel(rpaRepository.PacificLBSearch(), "PacificLB");
+		createExcel(rpaRepository.SeattleT18Search(), "SeattleTerminal18");
+		createExcel(rpaRepository.SeattleT30Search(), "SeattleTerminal30");
+		createExcel(rpaRepository.SeattleT46Search(), "SeattleTerminal46");
+		createExcel(rpaRepository.TPLASearch(), "TPLA");
+		createExcel(rpaRepository.TPOAKSearch(), "TPOAK");
 	}
 	
 //	public void terminalRPA_YMLA() throws Exception {
