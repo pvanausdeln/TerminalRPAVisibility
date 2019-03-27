@@ -241,7 +241,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
 			"and s.stopnumber = 1 \n" + 
 			"and s.name like '%TRAPAC LOS ANGELES%' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
 	List<IRPAQuery> TPLASearch();
 	
 //	@Query(value = "SELECT  \n" + 
