@@ -38,18 +38,20 @@ export class RpaComponent implements OnInit {
 
   setGridData() {
     this.gridData = [
-      {'id': 0, 'port': 'Long Beach', 'terminal': 'Pacific Long Beach', 'results': '', 'terminalId': 'pacificLB'},
-      {'id': 1, 'port': 'Los Angeles', 'terminal': 'APM Los Angeles', 'results': '', 'terminalId': 'apmLA'},
-      {'id': 2, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreenLA' },
-      {'id': 3, 'port': 'Los Angeles', 'terminal': 'TraPac Los Angeles', 'results': '', 'terminalId': 'trapacLA' },
+      {'id': 0, 'port': 'Long Beach', 'terminal': 'Long Beach Container Terminal', 'results': '', 'terminalId': 'LBCT'},
+      {'id': 1, 'port': 'Long Beach', 'terminal': 'Pacific Long Beach', 'results': '', 'terminalId': 'pacificLB'},
+      {'id': 2, 'port': 'Los Angeles', 'terminal': 'APM Los Angeles', 'results': '', 'terminalId': 'apmLA'},
+      {'id': 3, 'port': 'Los Angeles', 'terminal': 'Evergreen Los Angeles', 'results': '', 'terminalId': 'evergreenLA' },
+      {'id': 4, 'port': 'Los Angeles', 'terminal': 'TraPac Los Angeles', 'results': '', 'terminalId': 'trapacLA' },
+      {'id': 5, 'port': 'Los Angeles', 'terminal': 'WBCT Los Angeles', 'results': '', 'terminalId': 'wbctLA' },
       // {'id': 4, 'port': 'Los Angeles', 'terminal': 'Yang Ming Los Angeles', 'results': '', 'terminalId': 'ymLA' },
-      {'id': 4, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
-      {'id': 5, 'port': 'Oakland', 'terminal': 'TraPac Oakland', 'results': '', 'terminalId': 'trapacOAK' },
-      {'id': 6, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
-      {'id': 7, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
-      {'id': 8, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' },
-      {'id': 9, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
-      {'id': 10, 'port': 'Tacoma', 'terminal': 'Husky Tacoma', 'results': '', 'terminalId': 'huskyTAC' }
+      {'id': 6, 'port': 'Oakland', 'terminal': 'Evergreen Oakland', 'results': '', 'terminalId': 'evergreenOAK' },
+      {'id': 7, 'port': 'Oakland', 'terminal': 'TraPac Oakland', 'results': '', 'terminalId': 'trapacOAK' },
+      {'id': 8, 'port': 'Seattle', 'terminal': 'Terminal 18', 'results': '', 'terminalId': 'seattle18' },
+      {'id': 9, 'port': 'Seattle', 'terminal': 'Terminal 30', 'results': '', 'terminalId': 'seattle30' },
+      {'id': 10, 'port': 'Seattle', 'terminal': 'Terminal 46', 'results': '', 'terminalId': 'seattle46' },
+      {'id': 11, 'port': 'Tacoma', 'terminal': 'Evergreen Tacoma', 'results': '', 'terminalId': 'evergreenTAC' },
+      {'id': 12, 'port': 'Tacoma', 'terminal': 'Husky Tacoma', 'results': '', 'terminalId': 'huskyTAC' }
     ];
   }
 
