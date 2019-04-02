@@ -190,6 +190,32 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and w.statusid in (2,3) \n" + 
 			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
 			"and s.stopnumber = 1 \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND s.NAME LIKE '%NORTH CHARLESTON %' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+	List<IRPAQuery> NCTSearch();
+	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
 			"and s.name like '%PCT%' \n" + 
 			"AND w.ORIGINATORNAME LIKE '%Los Angeles%' \n" + 
 			"and trunc(workorderdate) >= trunc(sysdate-45) \n", nativeQuery = true)
@@ -346,6 +372,32 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND s.NAME LIKE '%WBCT%' \n" + 
 			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
 	List<IRPAQuery> WBCTLASearch();
+	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND s.NAME LIKE '%WANDO WELCH %' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+	List<IRPAQuery> WWTSearch();
 	
 //	@Query(value = "SELECT  \n" + 
 //			"ew.EQUIPMENTNUMBER, \n" + 

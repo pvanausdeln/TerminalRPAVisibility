@@ -108,6 +108,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_NCT() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.NCTSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "NCT");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\NCT\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPAPacificLB() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.PacificLBSearch();
@@ -196,6 +209,19 @@ public class RPAServiceImpl{
 		else {
 			createExcel(excel, "WBCTLA");
 			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WBCTLA\\Main.xaml\"");
+		}
+	}
+	
+	public void terminalRPA_WWT() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.WWTSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "WWT");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WWT\\Main.xaml\"");
 		}
 	}
 	
