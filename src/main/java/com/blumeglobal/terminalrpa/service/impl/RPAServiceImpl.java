@@ -39,7 +39,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "APMLA");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\APMLA\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\APMLA\\Main.xaml\"");
 		}
 	}
 	
@@ -52,7 +52,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "EvergreenPortLA");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortLA\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortLA\\Main.xaml\"");
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "EvergreenPortOAK");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortOAK\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortOAK\\Main.xaml\"");
 		}
 	}
 	
@@ -78,7 +78,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "EvergreenPortTAC");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortTAC\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\EvergreenPortTAC\\Main.xaml\"");
 		}
 	}
 	
@@ -91,7 +91,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "HuskyTAC");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\HuskyTAC\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\HuskyTAC\\Main.xaml\"");
 		}
 	}
 	
@@ -104,7 +104,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "LBCT");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\LBCT\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\LBCT\\Main.xaml\"");
 		}
 	}
 	
@@ -117,7 +117,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "NCT");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\NCT\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\NCT\\Main.xaml\"");
 		}
 	}
 	
@@ -130,7 +130,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "PacificLB");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\PacificLB\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\PacificLB\\Main.xaml\"");
 		}
 	}
 	
@@ -143,7 +143,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "SeattleTerminal18");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal18\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal18\\Main.xaml\"");
 		}
 	}
 	
@@ -156,7 +156,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "SeattleTerminal30");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal30\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal30\\Main.xaml\"");
 		}
 	}
 	
@@ -169,7 +169,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "SeattleTerminal46");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal46\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\SeattleTerminal46\\Main.xaml\"");
 		}
 	}
 	
@@ -182,7 +182,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "TPLA");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPLA\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPLA\\Main.xaml\"");
 		}
 	}
 	
@@ -195,7 +195,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "TPOAK");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPOAK\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPOAK\\Main.xaml\"");
 		}
 	}
 	
@@ -208,7 +208,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "WBCTLA");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WBCTLA\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WBCTLA\\Main.xaml\"");
 		}
 	}
 	
@@ -221,7 +221,7 @@ public class RPAServiceImpl{
 		}
 		else {
 			createExcel(excel, "WWT");
-			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WWT\\Main.xaml\"");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\WWT\\Main.xaml\"");
 		}
 	}
 	
@@ -232,6 +232,7 @@ public class RPAServiceImpl{
 		createExcel(rpaRepository.EverportTACSearch(), "EvergreenPortTAC");
 		createExcel(rpaRepository.HuskyTACSearch(), "HuskyTAC");
 		createExcel(rpaRepository.LBCTSearch(), "LBCT");
+		createExcel(rpaRepository.NCTSearch(), "NCT");
 		createExcel(rpaRepository.PacificLBSearch(), "PacificLB");
 		createExcel(rpaRepository.SeattleT18Search(), "SeattleTerminal18");
 		createExcel(rpaRepository.SeattleT30Search(), "SeattleTerminal30");
@@ -239,6 +240,8 @@ public class RPAServiceImpl{
 		//createExcel(rpaRepository.TCTSearch(), "TCT");
 		createExcel(rpaRepository.TPLASearch(), "TPLA");
 		createExcel(rpaRepository.TPOAKSearch(), "TPOAK");
+		createExcel(rpaRepository.WBCTLASearch(), "WBCTLA");
+		createExcel(rpaRepository.WWTSearch(), "WWT");
 		//createExcel(rpaRepository.YMLASearch(), "YMLA");
 	}
 	
@@ -251,7 +254,7 @@ public class RPAServiceImpl{
 //		}
 //		else {
 //			createExcel(excel, "YMLA");
-//			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.2.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\YMLA\\Main.xaml\"");
+//			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\YMLA\\Main.xaml\"");
 //		}
 //	}
 	
