@@ -46,7 +46,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and s.stopnumber = 1 \n" + 
 			"and s.name like '%APM%' \n" + 
 			"AND w.originatorname LIKE '%Los Angeles%' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-45)", nativeQuery = true)
+			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
 	List<IRPAQuery> APMLASearch();
 	
 	@Query(value = "select \n" + 
