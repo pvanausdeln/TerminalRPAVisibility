@@ -82,6 +82,22 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/LBCT", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> LBCT() throws Exception {
+    	myService.terminalRPALBCT();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/NCT", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> NCT() throws Exception {
+    	myService.terminalRPA_NCT();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/pacificLB", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> pacificLB() throws Exception {
     	myService.terminalRPAPacificLB();
@@ -128,6 +144,22 @@ public class RPAController {
     @RequestMapping(value = "/trapacOAK", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> tpOAK() throws Exception {
     	myService.terminalRPA_TPOAK();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/wbctLA", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> wbctLA() throws Exception {
+    	myService.terminalRPA_WBCTLA();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/WWT", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> WWT() throws Exception {
+    	myService.terminalRPA_WWT();
     	RPAResponse responseObj = new RPAResponse();
     	responseObj.setMessage("Complete");
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
