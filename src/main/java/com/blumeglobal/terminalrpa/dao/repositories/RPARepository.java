@@ -177,11 +177,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER, \n" + 
-			"s.name, \n" + 
-			"s.state, \n" + 
-			"w.WORKORDERDATE, \n" + 
-			"w.LASTFREEDAY \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
@@ -356,7 +352,13 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name, \n" + 
+			"s.state, \n" + 
+			"w.WORKORDERDATE, \n" + 
+			"w.LASTFREEDAY, \n" + 
+			"sysdate, \n" + 
+			"trunc(sysdate) \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
@@ -372,9 +374,8 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND w.vessel IS NOT NULL \n" + 
 			"AND w.VOYAGE IS NOT null \n" + 
 			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
-			"AND S.STATE like '%CA%' \n" + 
-			"AND s.NAME LIKE '%WBCT%' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+			"AND s.name like '%WBCT%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-15) AND TRUNC(WORKORDERDATE) < trunc(SYSDATE)", nativeQuery = true)
 	List<IRPAQuery> WBCTLASearch();
 	
 	@Query(value = "SELECT  \n" + 
@@ -383,11 +384,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER, \n" + 
-			"s.name, \n" + 
-			"s.state, \n" + 
-			"w.WORKORDERDATE, \n" + 
-			"w.LASTFREEDAY \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
