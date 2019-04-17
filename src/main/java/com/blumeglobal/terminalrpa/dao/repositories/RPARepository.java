@@ -177,7 +177,11 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name, \n" + 
+			"s.state, \n" + 
+			"w.WORKORDERDATE, \n" + 
+			"w.LASTFREEDAY \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
@@ -193,8 +197,8 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND w.vessel IS NOT NULL \n" + 
 			"AND w.VOYAGE IS NOT null \n" + 
 			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
-			"AND s.NAME LIKE '%NORTH CHARLESTON %' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+			"AND s.name like '%NORTH CHAR%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-15) AND trunc(WORKORDERDATE) < trunc(sysdate-2)", nativeQuery = true)
 	List<IRPAQuery> NCTSearch();
 	
 	@Query(value = "SELECT  \n" + 
@@ -379,7 +383,11 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"w.VOYAGE, \n" + 
 			"w.workordernumber, \n" + 
 			"w.SHIPMENTREFERENCENUMBER, \n" + 
-			"w.BILLOFLADINGNUMBER \n" + 
+			"w.BILLOFLADINGNUMBER, \n" + 
+			"s.name, \n" + 
+			"s.state, \n" + 
+			"w.WORKORDERDATE, \n" + 
+			"w.LASTFREEDAY \n" + 
 			"from \n" + 
 			"dm.workorder w, \n" + 
 			"dm.equipmentonworkorder ew, \n" + 
@@ -395,8 +403,10 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND w.vessel IS NOT NULL \n" + 
 			"AND w.VOYAGE IS NOT null \n" + 
 			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
-			"AND s.NAME LIKE '%WANDO WELCH %' \n" + 
-			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
+			"AND s.name like '%WANDO WELCH%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-30) \n" + 
+			"AND w.LASTFREEDAY < trunc(SYSDATE-1) \n" + 
+			"order by w.LASTFREEDAY DESC;", nativeQuery = true)
 	List<IRPAQuery> WWTSearch();
 	
 //	@Query(value = "SELECT  \n" + 
