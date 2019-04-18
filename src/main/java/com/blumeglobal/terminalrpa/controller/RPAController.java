@@ -50,6 +50,22 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
 	
+	@RequestMapping(value = "/barboursHOU", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> barboursHOU() throws Exception {
+    	myService.terminalRPA_Barbours();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+	
+	@RequestMapping(value = "/bayportHOU", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> bayportHOU() throws Exception {
+    	myService.terminalRPA_Bayport();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+	
     @RequestMapping(value = "/evergreenLA", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> evergreen() throws Exception {
     	myService.terminalRPAEverportLA();

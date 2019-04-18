@@ -47,6 +47,58 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"and trunc(workorderdate) >= trunc(sysdate-5)", nativeQuery = true)
 	List<IRPAQuery> APMLASearch();
 	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND s.name LIKE '%BAYPORT%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-10) AND TRUNC(WORKORDERDATE) < trunc(SYSDATE)", nativeQuery = true)
+	List<IRPAQuery> BayportSearch();
+	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND s.name LIKE '%BARBOURS%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-30) AND TRUNC(WORKORDERDATE) < trunc(SYSDATE)", nativeQuery = true)
+	List<IRPAQuery> BarboursSearch();
+	
 	@Query(value = "select \n" + 
 			"ew.EQUIPMENTNUMBER , \n" + 
 			"w.VESSEL, \n" + 
@@ -196,6 +248,32 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND s.name like '%NORTH CHAR%' \n" + 
 			"and trunc(workorderdate) >= trunc(sysdate-15) AND trunc(WORKORDERDATE) < trunc(sysdate-2)", nativeQuery = true)
 	List<IRPAQuery> NCTSearch();
+	
+	@Query(value = "SELECT  \n" + 
+			"ew.EQUIPMENTNUMBER, \n" + 
+			"w.VESSEL, \n" + 
+			"w.VOYAGE, \n" + 
+			"w.workordernumber, \n" + 
+			"w.SHIPMENTREFERENCENUMBER, \n" + 
+			"w.BILLOFLADINGNUMBER \n" + 
+			"from \n" + 
+			"dm.workorder w, \n" + 
+			"dm.equipmentonworkorder ew, \n" + 
+			"dm.stop s \n" + 
+			"where ew.workorderid = w.workorderid \n" + 
+			"and s.workorderid = w.workorderid \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.voyage IS NOT null \n" + 
+			"and w.statusid in (2,3) \n" + 
+			"and (category like 'Import%' or originatororderreference = 'Import-Ocean') \n" + 
+			"and s.stopnumber = 1 \n" + 
+			"AND w.vessel IS NOT NULL \n" + 
+			"AND w.VOYAGE IS NOT null \n" + 
+			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
+			"AND s.name LIKE '%PORT NEWARK%' \n" + 
+			"and trunc(workorderdate) >= trunc(sysdate-7) AND TRUNC(WORKORDERDATE) < trunc(SYSDATE)", nativeQuery = true)
+	List<IRPAQuery> NewarkSearch();
 	
 	@Query(value = "SELECT  \n" + 
 			"ew.EQUIPMENTNUMBER, \n" + 
@@ -402,8 +480,7 @@ public interface RPARepository extends CrudRepository<RPAEvent, Long>, JpaSpecif
 			"AND ew.EQUIPMENTNUMBER IS NOT NULL \n" + 
 			"AND s.name like '%WANDO WELCH%' \n" + 
 			"and trunc(workorderdate) >= trunc(sysdate-30) \n" + 
-			"AND w.LASTFREEDAY < trunc(SYSDATE-1) \n" + 
-			"order by w.LASTFREEDAY DESC;", nativeQuery = true)
+			"AND w.LASTFREEDAY < trunc(SYSDATE-1) \n", nativeQuery = true)
 	List<IRPAQuery> WWTSearch();
 	
 //	@Query(value = "SELECT  \n" + 
