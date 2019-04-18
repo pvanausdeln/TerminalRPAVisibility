@@ -114,6 +114,14 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/newark", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> PortNewark() throws Exception {
+    	myService.terminalRPA_Newark();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/pacificLB", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> pacificLB() throws Exception {
     	myService.terminalRPAPacificLB();
