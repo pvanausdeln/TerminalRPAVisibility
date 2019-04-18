@@ -1,10 +1,12 @@
-[INFO ] 2019-03-05 18:10:02.646 [main] TomcatWebServer - Tomcat started on port(s): 8502 (https) with context path ''
-[DEBUG] 2019-03-05 18:10:02.663 [main] SharedEntityManagerCreator$SharedEntityManagerInvocationHandler - Creating new EntityManager for shared EntityManager invocation
-[DEBUG] 2019-03-05 18:10:05.764 [Thread-5] AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@8741cb, started on Tue Mar 05 18:09:55 PST 2019
-[DEBUG] 2019-03-05 18:10:05.764 [Thread-5] DefaultLifecycleProcessor - Stopping beans in phase 2147483647
-[DEBUG] 2019-03-05 18:10:05.771 [Thread-5] DefaultLifecycleProcessor - Bean 'documentationPluginsBootstrapper' completed its stop procedure
-[INFO ] 2019-03-05 18:10:05.771 [Thread-5] ThreadPoolTaskScheduler - Shutting down ExecutorService 'taskScheduler'
-[DEBUG] 2019-03-05 18:10:05.773 [Thread-5] AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
-[DEBUG] 2019-03-05 18:10:05.773 [Thread-5] AnnotationMBeanExporter - Unregistering JMX-exposed beans
-[INFO ] 2019-03-05 18:10:05.773 [Thread-5] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-[INFO ] 2019-03-05 18:10:05.773 [Thread-5] LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2019-04-18 10:50:33.281 [main] TomcatWebServer - Tomcat started on port(s): 8502 (https) with context path ''
+[INFO ] 2019-04-18 10:54:25.004 [https-jsse-nio-8502-exec-6] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[DEBUG] 2019-04-18 10:54:25.005 [https-jsse-nio-8502-exec-6] DispatcherServlet - Detected StandardServletMultipartResolver
+[DEBUG] 2019-04-18 10:54:25.033 [https-jsse-nio-8502-exec-6] DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[INFO ] 2019-04-18 10:54:25.033 [https-jsse-nio-8502-exec-6] DispatcherServlet - Completed initialization in 28 ms
+[DEBUG] 2019-04-18 10:54:25.043 [https-jsse-nio-8502-exec-6] DispatcherServlet - GET "/updateLists", parameters={}
+[DEBUG] 2019-04-18 10:54:25.051 [https-jsse-nio-8502-exec-6] RequestMappingHandlerMapping - Mapped to public org.springframework.http.ResponseEntity<?> com.blumeglobal.terminalrpa.controller.RPAController.updateLists() throws java.lang.Exception
+[DEBUG] 2019-04-18 10:54:25.051 [https-jsse-nio-8502-exec-6] OpenEntityManagerInViewInterceptor - Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+[DEBUG] 2019-04-18 10:55:39.364 [https-jsse-nio-8502-exec-6] HttpEntityMethodProcessor - Using 'application/json;q=0.8', given [text/html, application/xhtml+xml, image/webp, image/apng, application/signed-exchange;v=b3, application/xml;q=0.9, */*;q=0.8] and supported [application/json]
+[DEBUG] 2019-04-18 10:55:39.399 [https-jsse-nio-8502-exec-6] HttpEntityMethodProcessor - Writing [com.blumeglobal.terminalrpa.response.RPAResponse@3c4e8d]
+[DEBUG] 2019-04-18 10:55:39.420 [https-jsse-nio-8502-exec-6] OpenEntityManagerInViewInterceptor - Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+[DEBUG] 2019-04-18 10:55:39.420 [https-jsse-nio-8502-exec-6] DispatcherServlet - Completed 200 OK
