@@ -134,6 +134,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_Maher() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.MaherSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "Maher");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\Maher\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPA_NCT() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.NCTSearch();
