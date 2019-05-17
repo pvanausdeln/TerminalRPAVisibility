@@ -121,6 +121,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_ITSLB() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.ITSLBSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "ITSLB");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\ITSLB\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPALBCT() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.LBCTSearch();
@@ -147,6 +160,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_Miami() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.MiamiSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "Miami");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\Miami\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPA_NCT() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.NCTSearch();
@@ -170,6 +196,19 @@ public class RPAServiceImpl{
 		else {
 			createExcel(excel, "PortNewark");
 			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\PortNewark\\Main.xaml\"");
+		}
+	}
+	
+	public void terminalRPAPacker() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.PackerSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "Packer");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\Packer\\Main.xaml\"");
 		}
 	}
 	
@@ -225,6 +264,19 @@ public class RPAServiceImpl{
 		}
 	}
 	
+	public void terminalRPA_TPJAX() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.TPJAXSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "TPJAX");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPJAX\\Main.xaml\"");
+		}
+	}
+	
 	public void terminalRPA_TPLA() throws Exception {
 		List<IRPAQuery> excel = null;
 		excel = rpaRepository.TPLASearch();
@@ -248,6 +300,19 @@ public class RPAServiceImpl{
 		else {
 			createExcel(excel, "TPOAK");
 			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TPOAK\\Main.xaml\"");
+		}
+	}
+	
+	public void terminalRPA_TTILB() throws Exception {
+		List<IRPAQuery> excel = null;
+		excel = rpaRepository.TTILBSearch();
+		if(excel == null) {
+			System.out.println("Query failed for some reason");
+			System.exit(1);
+		}
+		else {
+			createExcel(excel, "TTILB");
+			Runtime.getRuntime().exec("\"C:\\Users\\pvanausdeln\\AppData\\Local\\UiPath\\app-19.3.0\\UiRobot.exe\" /file:\"C:\\Users\\pvanausdeln\\Dropbox (Blume Global)\\Documents\\UiPath\\PortTerminalScraping\\TTILB\\Main.xaml\"");
 		}
 	}
 	
@@ -279,22 +344,30 @@ public class RPAServiceImpl{
 	
 	public void updateAll() throws Exception {
 		createExcel(rpaRepository.APMLASearch(), "APMLA");
+		//createExcel(rpaRepository.APMMOBSearch(), "APMMOB");
+		//createExcel(rpaRepository.APMNYSearch(), "APMNY");
 		createExcel(rpaRepository.BarboursSearch(), "BarboursHOU");
 		createExcel(rpaRepository.BayportSearch(), "BayportHOU");
 		createExcel(rpaRepository.EverportLASearch(), "EvergreenPortLA");
 		createExcel(rpaRepository.EverportOAKSearch(), "EvergreenPortOAK");
 		createExcel(rpaRepository.EverportTACSearch(), "EvergreenPortTAC");
 		createExcel(rpaRepository.HuskyTACSearch(), "HuskyTAC");
+		createExcel(rpaRepository.ITSLBSearch(), "ITSLB");
 		createExcel(rpaRepository.LBCTSearch(), "LBCT");
+		createExcel(rpaRepository.MaherSearch(), "Maher");
+		createExcel(rpaRepository.MiamiSearch(), "Miami");
 		createExcel(rpaRepository.NCTSearch(), "NCT");
 		createExcel(rpaRepository.NewarkSearch(), "PortNewark");
 		createExcel(rpaRepository.PacificLBSearch(), "PacificLB");
+		createExcel(rpaRepository.PackerSearch(), "Packer");
 		createExcel(rpaRepository.SeattleT18Search(), "SeattleTerminal18");
 		createExcel(rpaRepository.SeattleT30Search(), "SeattleTerminal30");
 		createExcel(rpaRepository.SeattleT46Search(), "SeattleTerminal46");
-		//createExcel(rpaRepository.TCTSearch(), "TCT");
+		createExcel(rpaRepository.TCTSearch(), "TCT");
+		createExcel(rpaRepository.TPJAXSearch(), "TPJAX");
 		createExcel(rpaRepository.TPLASearch(), "TPLA");
 		createExcel(rpaRepository.TPOAKSearch(), "TPOAK");
+		createExcel(rpaRepository.TTILBSearch(), "TTILB");
 		createExcel(rpaRepository.WBCTLASearch(), "WBCTLA");
 		createExcel(rpaRepository.WWTSearch(), "WWT");
 		//createExcel(rpaRepository.YMLASearch(), "YMLA");

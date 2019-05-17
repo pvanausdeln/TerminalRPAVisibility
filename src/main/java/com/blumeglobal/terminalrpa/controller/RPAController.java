@@ -98,6 +98,14 @@ public class RPAController {
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
+    @RequestMapping(value = "/itsLB", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> itsLB() throws Exception {
+    	myService.terminalRPA_ITSLB();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
     @RequestMapping(value = "/LBCT", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> LBCT() throws Exception {
     	myService.terminalRPALBCT();
@@ -109,6 +117,14 @@ public class RPAController {
     @RequestMapping(value = "/Maher", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> Maher() throws Exception {
     	myService.terminalRPA_Maher();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/Miami", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> Miami() throws Exception {
+    	myService.terminalRPA_Miami();
        	RPAResponse responseObj = new RPAResponse();
        	responseObj.setMessage("Complete");
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
@@ -127,6 +143,14 @@ public class RPAController {
     	myService.terminalRPA_Newark();
     	RPAResponse responseObj = new RPAResponse();
     	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/packer", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> Packer() throws Exception {
+    	myService.terminalRPAPacificLB();
+       	RPAResponse responseObj = new RPAResponse();
+       	responseObj.setMessage("Complete");
     	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
@@ -163,6 +187,22 @@ public class RPAController {
     	responseObj.setMessage("Complete");
  	   return new ResponseEntity<>(responseObj, HttpStatus.OK);
 
+    }
+    
+    @RequestMapping(value = "/ttiLB", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> ttiLB() throws Exception {
+    	myService.terminalRPA_TTILB();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
+    }
+    
+    @RequestMapping(value = "/trapacJAX", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> tpJAX() throws Exception {
+    	myService.terminalRPA_TPJAX();
+    	RPAResponse responseObj = new RPAResponse();
+    	responseObj.setMessage("Complete");
+    	return new ResponseEntity<>(responseObj, HttpStatus.OK);
     }
     
     @RequestMapping(value = "/trapacLA", produces = MediaType.APPLICATION_JSON_VALUE)
